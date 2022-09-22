@@ -1,0 +1,9 @@
+{
+    "/template/{templateId}": {
+      "$ref": "./templateId/index.json"
+    },
+    "/template/": {
+      "$ref": "./this.json"
+    }
+  }
+  

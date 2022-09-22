@@ -1,0 +1,73 @@
+{
+    "get": {
+      "description": "Get media",
+      "produces": [
+        "application/xml",
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "in": "query",
+          "name": "file",
+          "type": "string",
+          "description": "The template file",
+          "required": false
+        },
+        {
+          "in": "query",
+          "name": "folder",
+          "type": "string",
+          "description": "The folder path to fetch template recursively",
+          "required": false
+        },
+        {
+          "in": "query",
+          "name": "depth",
+          "type": "integer",
+          "format": "int32",
+          "description": "Maximum path depth to fetch unto which we fetch files",
+          "required": false
+        },
+        {
+          "in": "query",
+          "name": "branch",
+          "type": "string",
+          "description": "The branch to fetch resources from",
+          "required": false
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/templatePath"
+            }
+          }
+        }
+      }
+    },
+    "post": {
+      "description": "Upload Template",
+      "produces": [
+        "application/xml",
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "in": "body",
+          "name": "body",
+          "schema": {
+            "$ref": "#/definitions/PostParams"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "succesful"
+        }
+      }
+    }
+  }
+  
